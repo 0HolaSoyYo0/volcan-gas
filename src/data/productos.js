@@ -5,6 +5,7 @@ import abastible45 from "../assets/img/abastible45.png";
 import abastibleVMA15 from "../assets/img/abastibleVMA15.png";
 import abastibleVM15 from "../assets/img/abastibleVM15.png";
 
+
 /** 
 *@type {{
 *   id: number,
@@ -15,7 +16,7 @@ import abastibleVM15 from "../assets/img/abastibleVM15.png";
 *   imagen: string
 *}[]}
 */
-const productos = [
+export const productos = [
     {
         id: 1,
         nombre: "Cilindro de Gas 5 kg",
