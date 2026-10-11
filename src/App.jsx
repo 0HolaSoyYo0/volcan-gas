@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import { Routes, Route  } from "react-router-dom";
 
 import { itemsMenu } from "./data/itemsMenu.js";
+import Login from "./pages/autenticacion/Login.jsx";
 
 
 function App() {
@@ -12,12 +13,14 @@ function App() {
         <>
             <Header nombre={ "Titulo" } subtitulo={ "Subtitulo" } itemsMenu={ itemsMenu } />
 
-            <Routes>
-                <Route path={ "/" } element={ <Home /> } />
-                {/*<Route path={ "" } element={  } />*/}
-                {/*<Route path={ "" } element={  } />*/}
-                {/*<Route path={ "" } element={  } />*/}
-            </Routes>
+            <main>
+                <Routes>
+                    <Route path={ "/" } element={ <Home /> } />
+                    <Route path={ "/login" } element={ <Login /> } />
+                    {/*<Route path={ "" } element={  } />*/}
+                    {/*<Route path={ "" } element={  } />*/}
+                </Routes>
+            </main>
         </>
     )
 }

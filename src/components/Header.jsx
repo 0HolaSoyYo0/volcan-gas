@@ -9,18 +9,18 @@ function Header({ nombre, subtitulo, itemsMenu }) {
             <Container>
 
                 { /* Titulo y subtitulo */ }
-                <Navbar.Brand as={ NavLink } to="/" className="text-center mb-1">
+                <NavLink to="/" className="navbar-brand text-center mb-1">
                     <h1 className="h2 fw-bold mb-1">{ nombre }</h1>
                     <p className="small text-secondary mb-0">{ subtitulo }</p>
-                </Navbar.Brand>
+                </NavLink>
 
                 { /* Navegación */ }
                 <Nav className="justify-content-center flex-wrap">
                     {
                         itemsMenu.map((item) => (
-                            <Nav.Item key={ item.path } as={ NavLink } to={ item.path } className="fw-semibold">
+                            <NavLink key={ item.path } to={ item.path } className="nav-link fw-semibold">
                                 { item.label }
-                            </Nav.Item>
+                            </NavLink>
                         ))
                     }
                 </Nav>
