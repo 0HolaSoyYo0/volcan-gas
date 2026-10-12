@@ -1,0 +1,60 @@
+
+
+/* Fondo del header con el azul oscuro del boceto */
+.header-custom {
+  background-color: #002244;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #ff6600; /* Detalle naranja fuego */
+  padding: 0.75rem 0;
+}
+
+/* Alineación de la marca */
+.navbar-brand-custom {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.brand-text h1 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.brand-text p {
+  color: #e0e6ed !important; /* Más legible sobre fondo oscuro */
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Enlaces de navegación */
+.header-nav .header-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.header-nav .header-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Resaltado cuando uno esta en la pagina */
+.header-nav .header-link.active {
+  color: #ff6600 !important;
+  font-weight: 700;
+  border-bottom: 2px solid #ff6600;
+  border-radius: 0;
+}

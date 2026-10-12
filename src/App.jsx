@@ -1,6 +1,7 @@
 
 import Header from "./components/Header.jsx";
 import Home from "./pages/Home.jsx";
+import Footer from "./components/Footer.jsx";
 
 import { Routes, Route  } from "react-router-dom";
 
@@ -11,7 +12,7 @@ import Login from "./pages/autenticacion/Login.jsx";
 function App() {
     return(
         <>
-            <Header nombre={ "Titulo" } subtitulo={ "Subtitulo" } itemsMenu={ itemsMenu } />
+            <Header nombre={ "Gas El Volcán" } subtitulo={ "El calor de la casa" } itemsMenu={ itemsMenu } />
 
             <main>
                 <Routes>
@@ -20,7 +21,10 @@ function App() {
                     {/*<Route path={ "" } element={  } />*/}
                     {/*<Route path={ "" } element={  } />*/}
                 </Routes>
+
+            
             </main>
+            <Footer />
         </>
     )
 }

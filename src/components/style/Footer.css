@@ -1,0 +1,43 @@
+/* src/components/Footer.css */
+.site-footer {
+    background-color: var(--color-primary-dark, #002244);
+    color: #ffffff;
+    padding-top: 15px;
+    margin-top: auto;
+    /* Empuja el footer hacia abajo si hay poco contenido */
+    border-top: 3px solid var(--color-accent-orange, #ff6600);
+}
+
+.footer-contacto h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+    color: #ffffff;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+}
+
+.footer-info p {
+    font-size: 0.95rem;
+}
+
+.footer-schedule {
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
