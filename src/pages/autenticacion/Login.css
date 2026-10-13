@@ -1,0 +1,33 @@
+.login-card {
+	max-width: 520px;
+	margin: 0 auto;
+	background: color-mix(in srgb, var(--surface) 72%, transparent);
+	border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+	border-radius: 16px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+	backdrop-filter: blur(8px);
+}
+
+.login-card .form-check-label {
+	color: var(--text);
+}
+
+.login-card .form-check-input {
+	background-color: var(--surface);
+	border-color: var(--border);
+}
+
+.login-card .form-check-input:checked {
+	background-color: var(--color-accent-orange);
+	border-color: var(--color-accent-orange);
+}
+
+.login-card .form-check-input:focus {
+	border-color: var(--color-accent-orange);
+	box-shadow: 0 0 0 0.25rem rgba(255, 102, 0, 0.25);
+}
+
+:root.oscuro .login-card {
+	background: color-mix(in srgb, var(--surface) 78%, transparent);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
