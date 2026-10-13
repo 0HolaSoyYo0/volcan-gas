@@ -1,8 +1,10 @@
+
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logoImg from '../assets/img/logo.png';
 import './style/Header.css';
+
 
 function Header({ nombre, subtitulo, itemsMenu }) {
 	const [modoOscuro, setModoOscuro] = useState(

@@ -5,7 +5,7 @@ import { Form } from "react-bootstrap";
 function Formulario({ titulo, campos}) {
     return (
 
-        <Form>
+        <>
             <h3 className={ "mb-3" }>{ titulo }</h3>
 
             { campos.map((campo) => (
@@ -20,8 +20,7 @@ function Formulario({ titulo, campos}) {
                     ></Form.Control>
                 </Form.Group>
             ))}
-        </Form>
-
+        </>
 
     )
 }
