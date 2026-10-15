@@ -16,7 +16,8 @@ function Formulario({ titulo, campos}) {
                         type={ campo.type }
                         name={ campo.name }
                         placeholder={ campo.placeholder }
-                        required
+                        required={ campo.required ?? true }
+                        minLength={ campo.minLength }
                     ></Form.Control>
                 </Form.Group>
             ))}

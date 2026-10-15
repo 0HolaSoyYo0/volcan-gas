@@ -7,9 +7,9 @@ import './style/Header.css';
 
 
 function Header({ nombre, subtitulo, itemsMenu }) {
+
 	const [modoOscuro, setModoOscuro] = useState(
-		localStorage.getItem('tema') === 'oscuro' ||
-		localStorage.getItem('theme') === 'dark'
+		localStorage.getItem('tema') === 'oscuro' || localStorage.getItem('theme') === 'dark'
 	);
 
 	useEffect(() => {
