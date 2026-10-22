@@ -8,7 +8,7 @@
 	backdrop-filter: blur(8px);
 }
 
-.login-card .form-check-label {
+.login-card h3, .form-check-label {
 	color: var(--text);
 }
 
