@@ -1,5 +1,8 @@
 
 import './style/Footer.css';
+/*Placeholder para acceder rapido a 404*/ 
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 function Footer() {
@@ -16,12 +19,20 @@ function Footer() {
                     <p>✉️ ventas@volcangas.cl</p>
                 </address>
                 <p className="footer-schedule">🕒 Lun a Sáb: 08:30 - 20:30 hrs</p>
+                {/*Boton placeholder*/}
+                <Button
+                    className={"btn-secondary text-decoration-none ms-3"}
+                    as={Link}
+                    to="/error">
+                    Ir a Error
+                </Button>
             </section>
 
             {/*Espacio pequeño*/}
             <small className="footer-bottom">
                 <p>© 2026. Distribuidora de Gas El Volcán. Todos los derechos reservados.</p>
             </small>
+
         </footer>
     );
 }

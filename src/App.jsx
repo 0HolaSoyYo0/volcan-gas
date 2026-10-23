@@ -3,7 +3,8 @@ import Header from "./components/Header.jsx";
 import Home from "./pages/Home.jsx";
 import Footer from "./components/Footer.jsx";
 import Nosotros from "./pages/Nosotros.jsx";
-
+import Catalogo from "./pages/stock/Catalogo.jsx";
+import Error from "./pages/Error.jsx";
 import { Routes, Route  } from "react-router-dom";
 
 import { itemsMenu } from "./data/itemsMenu.js";
@@ -20,7 +21,8 @@ function App() {
                     <Route path={ "/" } element={ <Home /> } />
                     <Route path={ "/login" } element={ <Login /> } />
                     <Route path={ "/nosotros" } element={ <Nosotros /> } />
-                    {/*<Route path={ "" } element={  } />*/}
+                    <Route path={ "/productos" } element={ <Catalogo /> } />
+                    <Route path={ "*" } element={ <Error /> } />
                 </Routes>
 
             
