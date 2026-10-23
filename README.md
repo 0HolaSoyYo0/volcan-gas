@@ -1,158 +1,92 @@
-# Portal web de la Distribuidora de Gas El Volcán
+# Distribuidora de Gas El Volcán
 
-## Descripción técnica y académica
+Plataforma web para apoyar la venta y distribución de cilindros de gas licuado a domicilio en Chillán y comunas aledañas. El proyecto busca ordenar el ciclo de pedido, despacho, entrega, control de stock y registro de pagos de la Distribuidora de Gas El Volcán.
 
-**Asignatura:** DSY1104 – Desarrollo FullStack II  
-**Empresa:** Distribuidora de Gas El Volcán  
-**Ubicación:** Chillán, Región de Ñuble, Chile  
-**Tipo de solución:** Prototipo frontend para la comercialización y distribución de cilindros de gas licuado.
+**Curso:** DSY1104 – Desarrollo FullStack II · **Forma:** C
+**Empresa:** Distribuidora de Gas El Volcán · **Ubicación:** Chillán, Región de Ñuble
 
-## 1. Contexto y propósito
+## Contexto
 
-Distribuidora de Gas El Volcán es una empresa familiar fundada en 1998. Atiende clientes residenciales y comerciales de Chillán y comunas cercanas mediante dos camiones, tres repartidores, una operadora y una administradora.
+El Volcán es una empresa familiar fundada en 1998. Atiende a clientes residenciales y comerciales y distribuye cilindros de 5, 11 y 15 kg. Su operación cuenta con dos camiones, tres repartidores, una operadora de llamadas y una administradora; recibe entre 80 y 120 pedidos al día.
 
-Actualmente, los pedidos se reciben por teléfono y se registran manualmente. El despacho se coordina con listas en papel y el stock se calcula al finalizar la jornada. Esta operación dificulta el seguimiento de entregas, provoca pérdida o duplicación de pedidos y no permite consultar el inventario en tiempo real.
+Actualmente, la operadora recibe los pedidos por teléfono y los anota en cuadernos o papeles. Luego prepara una lista para cada repartidor. La administradora cuenta los cilindros y calcula el stock al cierre de la jornada. Los pagos en efectivo se cuadran manualmente.
 
-El portal busca centralizar la información de productos, clientes, pedidos, entregas, pagos e inventario. La versión actual corresponde a una primera iteración de interfaz: no incluye backend, base de datos ni persistencia de información.
+Este proceso deja a los clientes sin información sobre el avance de su pedido, obliga a la operadora a responder consultas repetidas y expone al negocio a pedidos duplicados o extraviados, falta de historial por cliente, quiebres de stock y diferencias en la contabilidad.
 
-## 2. Tecnologías
+## Visión del sistema
 
-| Tecnología | Uso |
+El sistema permitirá gestionar digitalmente los pedidos y las entregas desde que el cliente solicita un cilindro hasta que se confirma su recepción y pago. Cada persona verá las acciones y la información que necesita según su rol.
+
+### Funcionalidades esperadas
+
+- **Clientes:** consultar los cilindros disponibles, registrarse, iniciar sesión, realizar pedidos a domicilio y revisar el estado de sus entregas e historial.
+- **Operadora:** revisar los pedidos del día en una vista centralizada, consultar los datos de entrega y organizar la asignación a repartidores.
+- **Repartidores:** consultar desde el teléfono los pedidos asignados y actualizar el estado de cada entrega.
+- **Administradora:** revisar el stock de cilindros y los pedidos, y consultar los pagos registrados para facilitar el control diario.
+- **Administración del catálogo:** mantener la información de los cilindros ofrecidos por la distribuidora.
+
+El objetivo es disminuir la dependencia de cuadernos, listas en papel y llamadas de seguimiento; facilitar la coordinación del despacho; y dar mayor visibilidad a pedidos, entregas, inventario y pagos. La disponibilidad en tiempo real dependerá de la conexión y de los servicios de backend que se incorporen.
+
+## Actores y necesidades
+
+| Actor | Necesidad que atenderá el sistema |
 | --- | --- |
-| React 19 | Componentes y vistas de la interfaz |
-| Vite | Desarrollo y compilación |
-| React Router DOM | Navegación del lado del cliente |
-| React-Bootstrap y Bootstrap | Componentes visuales y diseño responsive |
-| JavaScript ES Modules | Lógica y datos del frontend |
-| CSS | Estilos globales, componentes y temas |
-| ESLint | Revisión estática del código |
+| Cliente | Solicitar gas sin llamar, proporcionar sus datos de entrega y consultar el avance del pedido. |
+| Operadora de llamadas | Consultar los pedidos del día desde un lugar central y coordinar su despacho. |
+| Repartidor | Ver su lista de entregas y comunicar cambios de estado desde un teléfono móvil. |
+| Administradora | Consultar el inventario y los registros de pagos para apoyar el cierre de jornada y la contabilidad. |
 
-## 3. Arquitectura y estructura
+## Flujos principales previstos
 
-`src/main.jsx` monta la aplicación dentro de `#root`, importa Bootstrap y los estilos globales, y configura `BrowserRouter`. `App.jsx` compone el layout general:
+### Pedido y entrega
 
-```text
-App
-├── Header
-├── Routes
-│   ├── Home (/)
-│   └── Login (/login)
-└── Footer
+1. El cliente consulta el catálogo, inicia sesión o crea una cuenta, y solicita uno o más cilindros.
+2. El sistema registra los datos del cliente, la dirección, los productos solicitados y el pedido.
+3. La operadora consulta los pedidos pendientes y coordina su asignación a un repartidor.
+4. El repartidor revisa las entregas asignadas desde su teléfono y actualiza su estado durante el despacho.
+5. Al completar la entrega, se registra el resultado y el pago correspondiente, según el flujo que se defina para el proyecto.
+6. El cliente puede consultar el estado y el historial asociados a su cuenta.
+
+### Control de inventario
+
+La administradora necesita consultar las existencias por tipo de cilindro. El sistema deberá relacionar los movimientos de productos con los pedidos y entregas para apoyar la actualización del stock y advertir cuando la disponibilidad sea insuficiente. La fuente de datos y las reglas exactas de ajuste deberán quedar definidas al implementar el backend.
+
+## Secciones de la aplicación
+
+La experiencia de cliente contempla inicio, catálogo, detalle de producto, inicio de sesión, registro, carrito o resumen del pedido, perfil y página de error. El personal autorizado contará con un panel de administración para gestionar el catálogo y revisar la operación. El acceso al panel deberá estar protegido por autenticación.
+
+Estas secciones representan el alcance esperado del proyecto académico. Su presencia en esta descripción no implica que todas estén implementadas en la versión actual.
+
+## Requisitos de uso y restricciones
+
+- **Uso móvil en ruta:** la interfaz de repartidores debe adaptarse a teléfonos Android de gama media-baja y facilitar la consulta y actualización de entregas.
+- **Conectividad variable:** las rutas pueden tener señal intermitente. La interfaz debe tolerar conexiones lentas y comunicar con claridad cuándo una actualización se ha realizado. El funcionamiento sin conexión requeriría soporte técnico adicional.
+- **Simplicidad operativa:** operadora y repartidores tienen poca experiencia con sistemas de gestión; las tareas frecuentes deben requerir pocos pasos y usar estados fáciles de reconocer.
+- **Privacidad:** los datos de clientes y pedidos son confidenciales. El acceso a las funciones internas debe limitarse al personal autorizado.
+- **Base de datos:** el contexto no exige un motor específico; la selección de MySQL, PostgreSQL u otra alternativa corresponde al diseño técnico del equipo.
+- **Pagos:** el contexto actual describe pagos en efectivo al momento de la entrega. El sistema debe contemplar su registro; no se asume integración con una pasarela de pago en línea.
+
+## Tecnologías del prototipo
+
+La base de interfaz de este repositorio utiliza React, Vite, React Router DOM, React-Bootstrap, Bootstrap y CSS. La arquitectura final deberá incorporar los servicios de backend, persistencia, control de acceso y gestión de datos necesarios para cumplir los flujos descritos.
+
+Para iniciar el prototipo actual:
+
+```bash
+npm install
+npm run dev
 ```
 
-La estructura principal es:
+Comandos disponibles:
 
-```text
-src/
-├── main.jsx                 Punto de entrada
-├── App.jsx                  Layout y rutas
-├── index.css                Estilos globales y temas
-├── components/              Componentes reutilizables
-│   ├── Header.jsx
-│   ├── Footer.jsx
-│   ├── Formulario.jsx
-│   └── Seccion.jsx
-├── pages/                   Vistas
-│   ├── Home.jsx
-│   ├── Nosotros.jsx
-│   ├── autenticacion/Login.jsx
-│   └── stock/
-│       ├── Catalogo.jsx
-│       └── DetallesProducto.jsx
-├── data/                    Datos estáticos
-│   ├── itemsMenu.js
-│   └── productos.js
-└── assets/img/              Logo e imágenes de productos
+```bash
+npm run build
+npm run preview
+npm run lint
 ```
 
-## 4. Módulos implementados
+## Estado del proyecto
 
-### Encabezado y navegación
+El repositorio se encuentra en etapa de prototipo frontend. Ya contiene la estructura inicial de React, una página de inicio, una sección institucional, un formulario visual de acceso, un encabezado con alternancia de tema y datos de ejemplo para cilindros. Todavía no proporciona el flujo completo descrito en esta visión: no hay backend, base de datos, pedidos persistentes, seguimiento de entregas, control real de inventario, registro de pagos ni autenticación de usuarios.
 
-`Header.jsx` recibe el nombre, subtítulo y opciones del menú. Los enlaces se generan desde `itemsMenu.js` mediante `NavLink`. También incluye el selector de tema claro/oscuro, que guarda la preferencia en `localStorage` y aplica la clase `oscuro` al elemento `<html>`.
-
-### Página de inicio
-
-`Home.jsx` presenta un mensaje de bienvenida y una descripción básica de los productos y servicios.
-
-### Productos
-
-`data/productos.js` contiene datos estáticos de cilindros de 5, 11, 15 y 45 kg, además de variantes VM y VMA de 15 kg. Cada producto posee `id`, `nombre`, `precio`, `descripcion`, `capacidad` e `imagen`.
-
-### Inicio de sesión
-
-`pages/autenticacion/Login.jsx` utiliza `Formulario.jsx` para generar campos de correo y contraseña. Incluye validación HTML, opción para recordar el usuario, enlace de recuperación y botones de acceso y registro.
-
-Actualmente `handleSubmit` solo evita el envío tradicional y registra un mensaje en consola. No existe autenticación contra una base de datos ni generación de sesión.
-
-### Pie de página
-
-`Footer.jsx` muestra los medios de contacto, horario de atención y derechos de la empresa.
-
-## 5. Diseño y modo oscuro
-
-La interfaz utiliza azul oscuro como color institucional y naranja como color de énfasis. Bootstrap proporciona contenedores, botones, formularios y utilidades responsive.
-
-El tema se implementa mediante variables CSS:
-
-```css
-:root {
-  --text: #1b263b;
-  --bg: #f7f9fc;
-  --surface: #ffffff;
-}
-
-:root.oscuro {
-  --text: #e5e7eb;
-  --bg: #111827;
-  --surface: #1f2937;
-}
-```
-
-El cambio de clase modifica los colores de fondo, texto, superficies y bordes. La preferencia se conserva en el navegador mediante `localStorage`.
-
-## 6. Rutas y estado actual
-
-| Ruta | Estado |
-| --- | --- |
-| `/` | Implementada mediante `Home` |
-| `/login` | Implementada mediante `Login` |
-| `/productos` | Enlace existente, ruta aún no registrada |
-| `/nosotros` | Enlace existente, ruta aún no registrada |
-| `/Recuperar-Contraseña` | Enlace existente, ruta aún no registrada |
-
-Los archivos `Nosotros.jsx`, `Catalogo.jsx` y `DetallesProducto.jsx` están preparados, pero aún no contienen una vista funcional.
-
-## 7. Relación con el problema empresarial
-
-| Actor | Necesidad | Estado actual |
-| --- | --- | --- |
-| Cliente | Consultar productos y solicitar gas | Existe la base visual de productos y login |
-| Operadora | Centralizar y asignar pedidos | Panel no implementado |
-| Repartidor | Consultar y actualizar entregas | Módulo móvil no implementado |
-| Administradora | Controlar stock y pagos | Panel administrativo no implementado |
-
-## 8. Limitaciones conocidas
-
-- No existe API ni base de datos.
-- Los productos son datos estáticos y no reflejan stock real.
-- No hay autenticación, autorización por roles ni persistencia.
-- No se pueden crear ni consultar pedidos.
-- No existe seguimiento de entregas ni registro de pagos.
-- No hay funcionamiento offline para zonas con señal intermitente.
-- Varias opciones del menú aún no tienen rutas implementadas.
-- `Formulario.jsx` utiliza `campo.Label`, mientras los datos de login usan `label`; debe unificarse el nombre de la propiedad.
-- El botón de registro está fuera del formulario y requiere una ruta o flujo independiente.
-
-## 9. Evolución propuesta
-
-1. Completar las vistas de catálogo, información institucional y recuperación de contraseña.
-2. Corregir validaciones, accesibilidad y navegación.
-3. Incorporar una API REST y una base de datos para usuarios, productos, pedidos, pagos e inventario.
-4. Implementar autenticación y permisos para clientes, operadora, repartidores y administradora.
-5. Desarrollar la gestión de pedidos, despacho, stock y pagos.
-6. Agregar una interfaz móvil con reintentos y sincronización para conectividad intermitente.
-
-## Conclusión
-
-El proyecto constituye un prototipo frontend navegable que establece la identidad visual, los componentes comunes, el acceso inicial y la base de un catálogo comercial para la Distribuidora de Gas El Volcán. Su transformación en una solución fullstack requiere incorporar persistencia, autenticación, control de roles, gestión de pedidos, inventario, pagos y seguimiento de entregas.
+Los requisitos y objetivos de este README describen el sistema que se busca desarrollar para el caso de la distribuidora; las funcionalidades existentes se limitan a las indicadas en el párrafo anterior.

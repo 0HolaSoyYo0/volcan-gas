@@ -11,7 +11,6 @@ function Formulario({ titulo, campos}) {
             { campos.map((campo) => (
                 <Form.Group className={ "mb-3" } key={ campo.name }>
                     <Form.Label>{ campo.Label }</Form.Label>
-
                     <Form.Control
                         type={ campo.type }
                         name={ campo.name }
