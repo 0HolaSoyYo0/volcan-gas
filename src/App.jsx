@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 
 import { itemsMenu } from "./data/itemsMenu.js";
 import Login from "./pages/autenticacion/Login.jsx";
+import RecuperarContrasena from "./pages/autenticacion/RecuperarContrasena.jsx";
 
 function App() {
 	return (
@@ -17,8 +18,11 @@ function App() {
 
 			<main>
 				<Routes>
+					// Inicio
 					<Route path="/" element={<Home />} />
+					// Gestion Cuenta Usuario
 					<Route path="/login" element={<Login />} />
+					<Route path="/recuperacion" element={<RecuperarContrasena />} />
 					<Route path="/nosotros" element={<Nosotros />} />
 					<Route path="/productos" element={<Catalogo />} />
 					<Route path="/productos/:id" element={<DetallesProducto />} />
