@@ -13,37 +13,37 @@ function Header({ nombre, subtitulo, itemsMenu }) {
 	);
 
 	useEffect(() => {
-		document.documentElement.classList.toggle('oscuro', modoOscuro);
+		document.documentElement.classList.toggle('tema-oscuro', modoOscuro);
 		localStorage.setItem('tema', modoOscuro ? 'oscuro' : 'claro');
 	}, [modoOscuro]);
 
 	return (
-		<Navbar className="header-custom">
+		<Navbar className="header-contenedor">
 			<Container className="d-flex justify-content-between align-items-center">
 
 				{/*Logo a la izquierda*/}
-				<NavLink to="/" className="navbar-brand-custom">
-					<img src={ logoImg } alt={ nombre } className="brand-logo-img" />
-					<div className="brand-text">
+				<NavLink to="/" className="header-marca">
+					<img src={ logoImg } alt={ nombre } className="header-logo" />
+					<div className="header-identidad">
 						<h1 className="h4 fw-bold mb-0">{ nombre }</h1>
 						<p className="small mb-0">{ subtitulo }</p>
 					</div>
 				</NavLink>
 
 				{/* Menu hacia la derecha del todo*/}
-				<Nav className="header-nav d-flex flex-row align-items-center gap-3">
+				<Nav className="header-navegacion d-flex flex-row align-items-center gap-3">
 					{ itemsMenu.map((item) => (
 						<NavLink
 							key={item.path}
 							to={item.path}
-							className="nav-link header-link fw-semibold"
+							className="nav-link header-enlace fw-semibold"
 						>
 							{item.label}
 						</NavLink>
 					)) }
 					<button
 						type="button"
-						className="alternar-tema"
+						className="header-boton-tema"
 						onClick={ () => setModoOscuro((estaOscuro) => !estaOscuro) }
 						aria-label={ modoOscuro ? 'Activar modo claro' : 'Activar modo oscuro' }
 					>

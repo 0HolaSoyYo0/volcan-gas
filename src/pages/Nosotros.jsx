@@ -9,7 +9,7 @@ function Nosotros() {
             <div className="row align-items-center g-4">
                 {/* Columna Izquierda: Textos y botones */}
                 <div className="col-10 col-lg-6">
-                    <span className="nosotros-tagline">
+                    <span className="nosotros-lema">
                         28 años junto a Chillán
                     </span>
 
@@ -48,7 +48,7 @@ function Nosotros() {
 
                 {/* Columna Derecha: Imagen con marco */}
                 <div className="col-10 col-lg-6">
-                    <div className="nosotros-img-frame">
+                    <div className="nosotros-marco-imagen">
                         <img src={imgNosotros} alt="Balones de gas" />
                     </div>
                 </div>

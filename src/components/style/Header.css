@@ -1,7 +1,7 @@
 
 
 /* Fondo del header con el azul oscuro del boceto */
-.header-custom {
+.header-contenedor {
   background-color: var(--color-primary-dark);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-bottom: 3px solid var(--color-accent-orange); /* Detalle naranja fuego */
@@ -9,26 +9,26 @@
 }
 
 /* Alineación de la marca */
-.navbar-brand-custom {
+.header-marca {
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.brand-logo-img {
+.header-logo {
   width: 48px;
   height: 48px;
   object-fit: contain;
 }
 
-.brand-text h1 {
+.header-identidad h1 {
   color: var(--color-text-light);
   font-size: 1.4rem;
   letter-spacing: 0.5px;
 }
 
-.brand-text p {
+.header-identidad p {
   color: #e0e6ed !important; /* Más legible sobre fondo oscuro */
   font-size: 0.8rem;
   letter-spacing: 1px;
@@ -36,7 +36,7 @@
 }
 
 /* Enlaces de navegación */
-.header-nav .header-link {
+.header-navegacion .header-enlace {
   color: #e2e8f0;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -46,20 +46,20 @@
 }
 
 
-.header-nav .header-link:hover {
+.header-navegacion .header-enlace:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* Resaltado cuando uno esta en la pagina */
-.header-nav .header-link.active {
+.header-navegacion .header-enlace.active {
   color: var(--color-accent-orange) !important;
   font-weight: 700;
   border-bottom: 2px solid var(--color-accent-orange);
   border-radius: 0;
 }
 
-.alternar-tema {
+.header-boton-tema {
   background: transparent;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
@@ -70,6 +70,6 @@
   line-height: 1;
 }
 
-.alternar-tema:hover {
+.header-boton-tema:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }

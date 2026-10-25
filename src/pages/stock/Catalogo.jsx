@@ -84,11 +84,11 @@ function Catalogo() {
 					{productosFiltrados.map((producto) => (
 						<Col key={producto.id} xs={12} sm={6} md={4} lg={4}>
 							<Card className="tarjeta-producto h-100">
-								<div className="tarjeta-producto-img-wrapper">
+								<div className="tarjeta-producto-marco-imagen">
 									<img
 										src={producto.imagen}
 										alt={producto.nombre}
-										className="tarjeta-producto-img"
+										className="tarjeta-producto-imagen"
 									/>
 								</div>
 
@@ -109,7 +109,7 @@ function Catalogo() {
 									</div>
 
 									<div>
-										<div className="precio-producto mb-3">
+										<div className="producto-precio mb-3">
 											${producto.precio.toLocaleString('es-CL')}
 										</div>
 

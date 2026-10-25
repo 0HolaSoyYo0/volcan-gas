@@ -1,6 +1,6 @@
 import Formulario from "../../components/Formulario.jsx";
 import { Button, Form } from "react-bootstrap";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import './Login.css';
 
 function handleSubmit(event) {
@@ -9,13 +9,15 @@ function handleSubmit(event) {
 }
 
 function Login() {
+    const navigate = useNavigate();
+
     return (
         <section className="container py-5">
-			<article className="card login-card p-4">
+			<article className="card inicio-sesion-tarjeta p-4">
 
                 <Form onSubmit={ handleSubmit } className={ "justify-content-between" }>
                     <Formulario
-                        titulo={ "Crear Usuario" }
+                        titulo={ "Iniciar Sesion" }
                         campos={ [
                             {
                                 name: "correo",
@@ -42,11 +44,14 @@ function Login() {
 							¿Olvidaste tu contraseña?
 						</NavLink>
 					</div>
-                    <Button className={ "w-50 mt-3" } variant={ "primary" } type={ "submit" } color={ "primary" }>Iniciar Sesion</Button>
+                    <Button className={ "w-50 mt-3" } variant={ "primary" } type={ "submit" } color={ "primary" }>Iniciar Sesión</Button>
                 </Form>
             </article>
 
-            <Button className={ "w-50 mt-3" } variant={ "primary" } type={ "submit" } color={ "primary" }>Registrarse</Button>
+            <Button
+                variant={"primary"}
+                onClick={ () => navigate("/register") }
+            >Registrarse</Button>
 
         </section>
 
