@@ -1,5 +1,5 @@
-/* src/components/Footer.css */
-.site-footer {
+/* Estilos del componente Footer */
+.footer-contenedor {
     background-color: var(--color-primary-dark);
     color: var(--color-text-light);
     padding-top: 15px;
@@ -14,7 +14,7 @@
     color: var(--color-text-light);
 }
 
-.footer-info {
+.footer-informacion {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,18 +22,18 @@
 
 }
 
-.footer-info p {
+.footer-informacion p {
     font-size: 0.95rem;
 }
 
-.footer-schedule {
+.footer-horario {
     margin-top: 0.9rem;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 0.5rem;
 }
 
-.footer-bottom {
+.footer-pie {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 4px;
     text-align: center;

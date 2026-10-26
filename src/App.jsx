@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import { itemsMenu } from "./data/itemsMenu.js";
 import Login from "./pages/autenticacion/Login.jsx";
 import RecuperarContrasena from "./pages/autenticacion/RecuperarContrasena.jsx";
+import Register from "./pages/autenticacion/Register.jsx";
 import Carrito from "./pages/stock/Carrito.jsx";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					// Gestion Cuenta Usuario
 					<Route path="/login" element={<Login />} />
+					<Route path="/register" elemenS«t={<Register />} />
 					<Route path="/recuperacion" element={<RecuperarContrasena />} />
 					<Route path="/nosotros" element={<Nosotros />} />
 					<Route path="/productos" element={<Catalogo />} />

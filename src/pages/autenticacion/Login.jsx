@@ -1,38 +1,61 @@
-import Formulario from "../../components/Formulario.jsx";
 import { Button, Form } from "react-bootstrap";
-import {NavLink} from "react-router-dom";
+import {useState} from "react";
+import {validaciones} from "./validaciones.js";
+import {NavLink, useNavigate} from "react-router-dom";
+import Formulario from "../../components/Formulario.jsx";
 import './Login.css';
 
-function handleSubmit(event) {
-    event.preventDefault()
-    console.log("Validaciones HTML superadas.")
-}
+
+const camposInicioSesion = [
+    {
+        name: "email",
+        label: "Correo electrónico",
+        type: "email",
+        placeholder: "correo@ejemplo.cl",
+        required: true,
+        autoComplete: "email",
+    },
+    {
+        name: "password",
+        label: "Clave de usuario",
+        type: "password",
+        placeholder: "Ingresa tu contraseña",
+        required: true,
+        minLength: 16,
+        autoComplete: "current-password",
+    },
+];
+
 
 function Login() {
+    const navigate = useNavigate();
+    const [errores, setErrores] = useState({});
+
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const datosFormulario = new FormData(event.currentTarget);
+        const valores = Object.fromEntries(datosFormulario)
+
+        const nuevosErrores = validaciones(valores);
+        setErrores(nuevosErrores);
+
+        if (Object.keys(nuevosErrores).length > 0) {
+            return
+        }
+        console.log("Mensaje para ver si esta mierda funciona. Formulario correcto");
+    }
+
     return (
         <section className="container py-5">
-			<article className="card login-card p-4">
+			<article className="card inicio-sesion-tarjeta p-4">
 
-                <Form onSubmit={ handleSubmit } className={ "justify-content-between" }>
+                <Form noValidate onSubmit={ handleSubmit }>
                     <Formulario
-                        titulo={ "Crear Usuario" }
-                        campos={ [
-                            {
-                                name: "correo",
-                                label: "Correo Electrónico",
-                                type: "email",
-                                placeholder: "correo@ejemplo.cl",
-                                required: true
-                            },
-                            {
-                                name: "contraseña",
-                                label: "Clave Usuario",
-                                type: "password",
-                                placeholder: "Ingresa tu contraseña",
-                                required: true,
-                                minLength: 16
-                            }
-                        ] }
+                        titulo={ "Iniciar Sesión" }
+                        campos={ camposInicioSesion }
+                        errores={ errores }
                     />
 
 					<div className="d-flex justify-content-around mb-3 ">
@@ -42,12 +65,20 @@ function Login() {
 							¿Olvidaste tu contraseña?
 						</NavLink>
 					</div>
-                    <Button className={ "w-50 mt-3" } variant={ "primary" } type={ "submit" } color={ "primary" }>Iniciar Sesion</Button>
+
+                    <Button className={ "w-50 mt-3" } variant={ "primary" } type={ "submit" } color={ "primary" }>
+                        Iniciar Sesión
+                    </Button>
+
                 </Form>
             </article>
-
-            <Button className={ "w-50 mt-3" } variant={ "primary" } type={ "submit" } color={ "primary" }>Registrarse</Button>
-
+            <Button
+                className={ "w-25 mt-3" }
+                variant={"primary"}
+                onClick={ () => navigate("/register") }
+            >
+                Registrarse
+            </Button>
         </section>
 
     )

@@ -78,15 +78,15 @@ function DetallesProducto() {
 				</Alert>
 			)}
 
-			<div className="detalle-producto-card">
+			<div className="detalle-producto">
 				<Row className="align-items-center g-5">
 					{/* Columna de la imagen */}
 					<Col xs={12} md={6}>
-						<div className="detalle-img-container">
+						<div className="detalle-producto-marco-imagen">
 							<img
 								src={producto.imagen}
 								alt={producto.nombre}
-								className="detalle-img"
+								className="detalle-producto-imagen"
 							/>
 						</div>
 					</Col>
@@ -101,7 +101,7 @@ function DetallesProducto() {
 
 						<h1 className="fw-bold mb-3">{producto.nombre}</h1>
 
-						<div className="precio-producto fs-2 mb-2">
+						<div className="producto-precio fs-2 mb-2">
 							${producto.precio.toLocaleString('es-CL')} <small className="fs-6 text-muted">c/u (IVA incluido)</small>
 						</div>
 
@@ -120,7 +120,7 @@ function DetallesProducto() {
 									<button type="button" onClick={decrementar} aria-label="Disminuir cantidad">
 										−
 									</button>
-									<span className="cantidad-valor">{cantidad}</span>
+									<span className="selector-cantidad-valor">{cantidad}</span>
 									<button type="button" onClick={incrementar} aria-label="Aumentar cantidad">
 										+
 									</button>

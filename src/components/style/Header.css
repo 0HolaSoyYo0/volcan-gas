@@ -1,116 +1,73 @@
 /* Fondo del header con el azul oscuro del boceto */
-.header-custom {
-	background-color: var(--color-primary-dark);
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-	border-bottom: 3px solid var(--color-accent-orange); /* Detalle naranja fuego */
-	padding: 0.75rem 0;
+.header-contenedor {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid var(--color-accent-orange); /* Detalle naranja fuego */
+  padding: 0.75rem 0;
 }
 
 /* Alineación de la marca */
-.navbar-brand-custom {
-	text-decoration: none;
-	display: flex;
-	align-items: center;
-	gap: 12px;
+.header-marca {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.brand-logo-img {
-	width: 48px;
-	height: 48px;
-	object-fit: contain;
+.header-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
-.brand-text h1 {
-	color: var(--color-text-light);
-	font-size: 1.4rem;
-	letter-spacing: 0.5px;
+.header-identidad h1 {
+  color: var(--color-text-light);
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
 }
 
-.brand-text p {
-	color: #e0e6ed !important; /* Más legible sobre fondo oscuro */
-	font-size: 0.8rem;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+.header-identidad p {
+  color: #e0e6ed !important; /* Más legible sobre fondo oscuro */
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Enlaces de navegación */
-.header-nav .header-link {
-	color: #e2e8f0;
-	text-decoration: none;
-	padding: 0.5rem 1rem;
-	font-size: 0.95rem;
-	border-radius: 4px;
-	transition: all 0.2s ease-in-out;
+.header-navegacion .header-enlace {
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
 }
 
-.header-nav .header-link:hover {
-	color: #ffffff;
-	background-color: rgba(255, 255, 255, 0.08);
+
+.header-navegacion .header-enlace:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* Resaltado cuando uno esta en la pagina */
-.header-nav .header-link.active {
-	color: var(--color-accent-orange) !important;
-	font-weight: 700;
-	border-bottom: 2px solid var(--color-accent-orange);
-	border-radius: 0;
+.header-navegacion .header-enlace.active {
+  color: var(--color-accent-orange) !important;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-accent-orange);
+  border-radius: 0;
 }
 
-.alternar-tema {
-	background: transparent;
-	border: 1px solid #e2e8f0;
-	border-radius: 6px;
-	color: var(--color-text-light);
-	cursor: pointer;
-	padding: 0.4rem 0.6rem;
-	font-size: 1rem;
-	line-height: 1;
+.header-boton-tema {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  line-height: 1;
 }
 
-.alternar-tema:hover {
-	background-color: rgba(255, 255, 255, 0.08);
-}
-
-/* Píldora roja para el Carrito */
-.btn-carrito-pildora {
-	background-color: #dc3545;
-	color: #ffffff !important;
-	font-weight: 600;
-	font-size: 0.9rem;
-	padding: 0.45rem 1.1rem;
-	border-radius: 50rem;
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	border: 1px solid #dc3545;
-	text-decoration: none;
-	transition: all 0.2s ease-in-out;
-	box-shadow: 0 3px 8px rgba(220, 53, 69, 0.35);
-}
-
-.btn-carrito-pildora:hover {
-	background-color: #b02a37;
-	border-color: #a52834;
-	color: #ffffff !important;
-	transform: translateY(-1px);
-	box-shadow: 0 5px 12px rgba(220, 53, 69, 0.45);
-}
-
-.btn-carrito-pildora.active {
-	background-color: #a52834;
-	border-color: #93222e;
-	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-.badge-contador-carrito {
-	background-color: #ffffff;
-	color: #dc3545;
-	font-size: 0.75rem;
-	font-weight: 800;
-	padding: 2px 7px;
-	border-radius: 50rem;
-	line-height: 1;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+.header-boton-tema:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }

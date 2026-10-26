@@ -81,7 +81,7 @@ export const productos = [
         id: 5,
         nombre: "Cilindro VMA 15 kg",
         precio: 23000,
-        descripcion: "Versión VMA de 15 kg, diseñado para abastecer de energía a los yales o grúas horquilla, además de otras maquinarias.",
+        descripcion: "Versión VMA de 15 kg, cilindro de aluminio diseñado para abastecer de energía a los yales o grúas horquilla, además de otras maquinarias.",
         capacidad: 15,
         imagen: abastibleVMA15
     },
@@ -93,7 +93,7 @@ export const productos = [
         id: 6,
         nombre: "Cilindro VM 15 kg",
         precio: 24000,
-        descripcion: "Versión VM de 15 kg, diseñado para abastecer de energía a los yales o grúas horquilla, además de otras maquinarias.",
+        descripcion: "Versión VM de 15 kg, cilindro de fierro diseñado para abastecer de energía a los yales o grúas horquilla, además de otras maquinarias.",
         capacidad: 15,
         imagen: abastibleVM15
     }

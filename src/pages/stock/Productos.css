@@ -17,7 +17,7 @@
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.tarjeta-producto-img-wrapper {
+.tarjeta-producto-marco-imagen {
 	background-color: #ffffff;
 	padding: 24px;
 	display: flex;
@@ -26,24 +26,24 @@
 	border-bottom: 1px solid var(--border);
 }
 
-.tarjeta-producto-img {
+.tarjeta-producto-imagen {
 	height: 180px;
 	object-fit: contain;
 	transition: transform 0.3s ease;
 }
 
-.tarjeta-producto:hover .tarjeta-producto-img {
+.tarjeta-producto:hover .tarjeta-producto-imagen {
 	transform: scale(1.05);
 }
 
-.precio-producto {
+.producto-precio {
 	color: var(--color-accent-orange);
 	font-size: 1.4rem;
 	font-weight: 700;
 }
 
 /* Vista de Detalles de Producto */
-.detalle-producto-card {
+.detalle-producto {
 	background-color: var(--surface);
 	border: 1px solid var(--border);
 	border-radius: 16px;
@@ -52,7 +52,7 @@
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.detalle-img-container {
+.detalle-producto-marco-imagen {
 	background-color: #ffffff;
 	border: 1px solid var(--border);
 	border-radius: 12px;
@@ -62,19 +62,10 @@
 	align-items: center;
 }
 
-.detalle-img {
+.detalle-producto-imagen {
 	max-height: 380px;
 	width: auto;
 	object-fit: contain;
-}
-
-.badge-capacidad {
-	background-color: var(--color-primary-dark);
-	color: #ffffff;
-	padding: 6px 14px;
-	border-radius: 20px;
-	font-weight: 600;
-	font-size: 0.85rem;
 }
 
 /* Selector de cantidad */
@@ -102,32 +93,22 @@
 	background-color: var(--border);
 }
 
-.selector-cantidad .cantidad-valor {
+.selector-cantidad .selector-cantidad-valor {
 	padding: 0 16px;
 	font-weight: 600;
 	min-width: 40px;
 	text-align: center;
 }
 
-.btn-me-gusta {
-	transition: all 0.2s ease;
-}
-
-.btn-me-gusta.activo {
-	background-color: #ffe4e6;
-	border-color: #f43f5e;
-	color: #e11d48;
-}
-
-:root.oscuro .tarjeta-producto-img-wrapper,
-:root.oscuro .detalle-img-container {
+:root.tema-oscuro .tarjeta-producto-marco-imagen,
+:root.tema-oscuro .detalle-producto-marco-imagen {
 	background-color: #1a222f;
 }
 
-:root.oscuro .tarjeta-producto:hover {
+:root.tema-oscuro .tarjeta-producto:hover {
 	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
-:root.oscuro .detalle-producto-card {
+:root.tema-oscuro .detalle-producto {
 	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }

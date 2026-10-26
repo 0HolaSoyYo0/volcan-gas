@@ -1,0 +1,46 @@
+
+.registro-tarjeta {
+    max-width: 640px;
+    width: 100%;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.registro-tarjeta h1,
+.registro-tarjeta h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.registro-tarjeta .form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.registro-tarjeta .form-control,
+.registro-tarjeta .form-select {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+}
+
+.registro-tarjeta .form-control:focus,
+.registro-tarjeta .form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
+}
+
+.registro-tarjeta .btn {
+    padding: 0.55rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .registro-tarjeta {
+        padding: 1.25rem !important;
+        border-radius: 12px;
+    }
+}

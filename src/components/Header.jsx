@@ -11,7 +11,7 @@ function Header({ nombre, subtitulo, itemsMenu }) {
 	);
 
 	useEffect(() => {
-		document.documentElement.classList.toggle('oscuro', modoOscuro);
+		document.documentElement.classList.toggle('tema-oscuro', modoOscuro);
 		localStorage.setItem('tema', modoOscuro ? 'oscuro' : 'claro');
 	}, [modoOscuro]);
 
@@ -45,25 +45,25 @@ function Header({ nombre, subtitulo, itemsMenu }) {
 	}, []);
 
 	return (
-		<Navbar className="header-custom">
+		<Navbar className="header-contenedor">
 			<Container className="d-flex justify-content-between align-items-center">
 
-				{/* Logo a la izquierda */}
-				<NavLink to="/" className="navbar-brand-custom">
-					<img src={logoImg} alt={nombre} className="brand-logo-img" />
-					<div className="brand-text">
-						<h1 className="h4 fw-bold mb-0">{nombre}</h1>
-						<p className="small mb-0">{subtitulo}</p>
+				{/*Logo a la izquierda*/}
+				<NavLink to="/" className="header-marca">
+					<img src={ logoImg } alt={ nombre } className="header-logo" />
+					<div className="header-identidad">
+						<h1 className="h4 fw-bold mb-0">{ nombre }</h1>
+						<p className="small mb-0">{ subtitulo }</p>
 					</div>
 				</NavLink>
 
-				{/* Menú hacia la derecha */}
-				<Nav className="header-nav d-flex flex-row align-items-center gap-3">
-					{itemsMenu.map((item) => (
+				{/* Menu hacia la derecha del todo*/}
+				<Nav className="header-navegacion d-flex flex-row align-items-center gap-3">
+					{ itemsMenu.map((item) => (
 						<NavLink
 							key={item.path}
 							to={item.path}
-							className="nav-link header-link fw-semibold"
+							className="nav-link header-enlace fw-semibold"
 						>
 							{item.label}
 						</NavLink>
@@ -72,9 +72,9 @@ function Header({ nombre, subtitulo, itemsMenu }) {
 					{/* Botón para alternar tema */}
 					<button
 						type="button"
-						className="alternar-tema"
-						onClick={() => setModoOscuro((estaOscuro) => !estaOscuro)}
-						aria-label={modoOscuro ? 'Activar modo claro' : 'Activar modo oscuro'}
+						className="header-boton-tema"
+						onClick={ () => setModoOscuro((estaOscuro) => !estaOscuro) }
+						aria-label={ modoOscuro ? 'Activar modo claro' : 'Activar modo oscuro' }
 					>
 						{modoOscuro ? '☀️' : '🌙'}
 					</button>
