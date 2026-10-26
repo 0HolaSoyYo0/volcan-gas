@@ -11,6 +11,7 @@ import { itemsMenu } from "./data/itemsMenu.js";
 import Login from "./pages/autenticacion/Login.jsx";
 import RecuperarContrasena from "./pages/autenticacion/RecuperarContrasena.jsx";
 import Register from "./pages/autenticacion/Register.jsx";
+import Carrito from "./pages/stock/Carrito.jsx";
 
 function App() {
 	return (
@@ -23,13 +24,14 @@ function App() {
 					<Route path="/" element={<Home />} />
 					// Gestion Cuenta Usuario
 					<Route path="/login" element={<Login />} />
-					<Route path="/register" element={<Register />} />
+					<Route path="/register" elemenS«t={<Register />} />
 					<Route path="/recuperacion" element={<RecuperarContrasena />} />
 					<Route path="/nosotros" element={<Nosotros />} />
 					<Route path="/productos" element={<Catalogo />} />
 					<Route path="/productos/:id" element={<DetallesProducto />} />
 					<Route path="/error" element={<Error />} />
 					<Route path="*" element={<Error />} />
+					<Route path="/carrito" element={<Carrito />} />
 				</Routes>
 			</main>
 

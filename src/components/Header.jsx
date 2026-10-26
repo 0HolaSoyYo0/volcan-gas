@@ -1,10 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logoImg from '../assets/img/logo.png';
 import './style/Header.css';
-
 
 function Header({ nombre, subtitulo, itemsMenu }) {
 
@@ -16,6 +14,35 @@ function Header({ nombre, subtitulo, itemsMenu }) {
 		document.documentElement.classList.toggle('tema-oscuro', modoOscuro);
 		localStorage.setItem('tema', modoOscuro ? 'oscuro' : 'claro');
 	}, [modoOscuro]);
+
+
+	const [totalCarrito, setTotalCarrito] = useState(() => {
+		try {
+			const guardados = JSON.parse(localStorage.getItem('carrito_volcan')) || [];
+			return guardados.reduce((acc, item) => acc + (item.cantidad || 0), 0);
+		} catch {
+			return 0;
+		}
+	});
+
+	useEffect(() => {
+		const actualizarContador = () => {
+			try {
+				const guardados = JSON.parse(localStorage.getItem('carrito_volcan')) || [];
+				setTotalCarrito(guardados.reduce((acc, item) => acc + (item.cantidad || 0), 0));
+			} catch {
+				setTotalCarrito(0);
+			}
+		};
+
+		window.addEventListener('storage', actualizarContador);
+		window.addEventListener('carritoActualizado', actualizarContador);
+
+		return () => {
+			window.removeEventListener('storage', actualizarContador);
+			window.removeEventListener('carritoActualizado', actualizarContador);
+		};
+	}, []);
 
 	return (
 		<Navbar className="header-contenedor">
@@ -40,7 +67,9 @@ function Header({ nombre, subtitulo, itemsMenu }) {
 						>
 							{item.label}
 						</NavLink>
-					)) }
+					))}
+
+					{/* Botón para alternar tema */}
 					<button
 						type="button"
 						className="header-boton-tema"
@@ -49,6 +78,20 @@ function Header({ nombre, subtitulo, itemsMenu }) {
 					>
 						{modoOscuro ? '☀️' : '🌙'}
 					</button>
+
+					{/* Píldora roja al lado derecho del botón de tema */}
+					<NavLink
+						to="/carrito"
+						className="btn-carrito-pildora"
+						aria-label="Ver carrito de compras"
+					>
+						<span>🛒 Carrito</span>
+						{totalCarrito > 0 && (
+							<span className="badge-contador-carrito">
+								{totalCarrito}
+							</span>
+						)}
+					</NavLink>
 				</Nav>
 
 			</Container>

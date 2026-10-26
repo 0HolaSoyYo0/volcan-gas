@@ -26,6 +26,24 @@ function DetallesProducto() {
 	};
 
 	const agregarAlCarrito = () => {
+		// Realiza el guardado y envia la notificacion para cambiar el contador de la pildora en el header
+		const carritoActual = JSON.parse(localStorage.getItem('carrito_volcan')) || [];
+		const index = carritoActual.findIndex((item) => item.id === producto.id);
+
+		if (index >= 0) {
+			carritoActual[index].cantidad += cantidad;
+		} else {
+			carritoActual.push({
+				id: producto.id,
+				nombre: producto.nombre,
+				precio: producto.precio,
+				cantidad: cantidad
+			});
+		}
+
+		localStorage.setItem('carrito_volcan', JSON.stringify(carritoActual));
+		window.dispatchEvent(new Event('carritoActualizado'));
+
 		setAlertaCarrito(true);
 		setTimeout(() => {
 			setAlertaCarrito(false);
