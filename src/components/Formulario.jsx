@@ -2,22 +2,30 @@
 import { Form } from "react-bootstrap";
 
 
-function Formulario({ titulo, campos}) {
+function Formulario({ titulo, campos, errores = {} }) {
     return (
 
         <>
             <h3 className={ "mb-3" }>{ titulo }</h3>
 
             { campos.map((campo) => (
-                <Form.Group className={ "mb-3" } key={ campo.name }>
+                <Form.Group className={ "mb-3" } controlId={campo.name} key={ campo.name }>
                     <Form.Label>{ campo.Label }</Form.Label>
+
                     <Form.Control
                         type={ campo.type }
                         name={ campo.name }
                         placeholder={ campo.placeholder }
                         required={ campo.required ?? true }
                         minLength={ campo.minLength }
-                    ></Form.Control>
+                        autoComplete={ campo.autoComplete }
+                        isValid={ Boolean(errores[ campo.name ]) }
+                    />
+
+                    <Form.Control.Feedback type="invalid">
+                        { errores[ campo.name ] }
+                    </Form.Control.Feedback>
+
                 </Form.Group>
             ))}
         </>

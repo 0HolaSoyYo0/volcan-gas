@@ -41,7 +41,7 @@ function Nosotros() {
                     <Button
                         className={"btn-secondary text-decoration-none ms-3"}
                         as={Link}
-                        to="/registro">
+                        to="/register">
                         Crear cuenta
                     </Button>
                 </div>
