@@ -38,7 +38,7 @@ function Login() {
 					<div className="d-flex justify-content-around mb-3 ">
 						<Form.Check type="checkbox" label={ "Recordar usuario" }/>
 
-						<NavLink to={ "/Recuperar-Contraseña" } className="text-decoration-none">
+						<NavLink to={ "/recuperacion" } className="text-decoration-none">
 							¿Olvidaste tu contraseña?
 						</NavLink>
 					</div>

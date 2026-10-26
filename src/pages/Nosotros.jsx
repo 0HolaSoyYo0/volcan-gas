@@ -34,7 +34,7 @@ function Nosotros() {
                     <Button
                         className={"btn-secondary text-decoration-none ms-3"}
                         as={Link}
-                        to="/catalogo">
+                        to="/productos">
                         Ver catálogo
                     </Button>
 
