@@ -24,7 +24,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					// Gestion Cuenta Usuario
 					<Route path="/login" element={<Login />} />
-					<Route path="/register" elemenS«t={<Register />} />
+					<Route path="/register" element={<Register />} />
 					<Route path="/recuperacion" element={<RecuperarContrasena />} />
 					<Route path="/nosotros" element={<Nosotros />} />
 					<Route path="/productos" element={<Catalogo />} />
