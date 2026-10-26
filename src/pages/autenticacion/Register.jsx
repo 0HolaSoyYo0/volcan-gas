@@ -85,10 +85,11 @@ function Register() {
         const nuevosErrores = validacionesRegistro(valores);
         setErrores(nuevosErrores);
 
-        if (Object.keys(nuevosErrores).length === 0) {
+        if (Object.keys(nuevosErrores).length > 0) {
             return;
         }
 
+        console.log("Registro válido:", valores);
     }
 
     return(
@@ -96,13 +97,13 @@ function Register() {
             <article className="card registro-tarjeta p-4 mx-auto">
                 <Form noValidate={true} onSubmit={handleSubmit}>
                     <Formulario
-                        titulo={ "Iniciar Sesión" }
+                        titulo={ "Crear cuenta" }
                         campos={ campos }
                         errores={ errores }
                     />
 
                     <div className={"d-flex justify-content-end gap-2 mt-4"}>
-                        <Button variant={"secondary"} onClick={ () => navigate("/login") }>Volver</Button>
+                        <Button type="button" variant={"secondary"} onClick={ () => navigate("/login") }>Volver</Button>
                         <Button variant={"primary"} type={"submit"}>Terminar</Button>
                     </div>
                 </Form>

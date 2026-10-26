@@ -10,7 +10,7 @@ function Formulario({ titulo, campos, errores = {} }) {
 
             { campos.map((campo) => (
                 <Form.Group className={ "mb-3" } controlId={campo.name} key={ campo.name }>
-                    <Form.Label>{ campo.Label }</Form.Label>
+                    <Form.Label>{ campo.label }</Form.Label>
 
                     <Form.Control
                         type={ campo.type }
@@ -19,7 +19,7 @@ function Formulario({ titulo, campos, errores = {} }) {
                         required={ campo.required ?? true }
                         minLength={ campo.minLength }
                         autoComplete={ campo.autoComplete }
-                        isValid={ Boolean(errores[ campo.name ]) }
+                        isInvalid={ Boolean(errores[ campo.name ]) }
                     />
 
                     <Form.Control.Feedback type="invalid">

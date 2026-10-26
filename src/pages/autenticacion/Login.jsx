@@ -51,7 +51,7 @@ function Login() {
         <section className="container py-5">
 			<article className="card inicio-sesion-tarjeta p-4">
 
-                <Form noValidate Validate onSubmit={ handleSubmit }>
+                <Form noValidate onSubmit={ handleSubmit }>
                     <Formulario
                         titulo={ "Iniciar Sesión" }
                         campos={ camposInicioSesion }
